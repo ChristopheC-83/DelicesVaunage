@@ -1,0 +1,33 @@
+header{
+  width: 100%;
+  height: 25vw;
+  max-height: 380px;
+  background: url("https://cloud.ducompagnon.fr/uploads/users/51/51cb24e0-e122-4de3-b626-e5dbf919d779/PRO/boulangerie_vaunage/accueil.png") no-repeat center/cover;
+
+}
+
+
+.link-navbar{
+  overflow: hidden;
+}
+
+.link-navbar::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 1px;
+  background-color: $col-or1;
+  transform: translateX(-100%);
+  transition: all 0.33s ease-in-out;
+
+ 
+}
+.link-navbar:hover::after {
+  transform: translateX(0);
+}
+@media (max-width:768px) {
+  .link-navbar::after{
+    display: none;
+  }
+}

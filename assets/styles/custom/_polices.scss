@@ -1,0 +1,80 @@
+// style et couleur
+
+/* Utilisation des variables */
+// .bg-clip {
+//   background: linear-gradient(
+//     45deg,
+//     $col2 0%,
+//     $col1 100%
+//   );
+// }
+
+
+// .text-clip {
+//   background: linear-gradient(90deg, $col2 0%, $col6 100%);
+//   -webkit-background-clip: text; /* Ajout du préfixe pour Safari et Chrome */
+//   background-clip: text;
+//   color: transparent;
+// }
+
+
+
+// font-size
+
+.h1 {
+  font-size: clamp(32px, calc(24px + 2.2vw), 60px);
+  letter-spacing: calc(1px + 0.12vw);
+  font-weight: bold;
+  width: fit-content;
+  font-family: "Roboto", sans-serif;
+}
+.h2 {
+  font-size: clamp(23px, calc(20px + 1.65vw), 40px);
+  letter-spacing: calc(1px + 0.04vw);
+  font-weight: bold;
+  width: fit-content;
+  font-family: "Roboto", sans-serif;
+}
+.h3 {
+  font-size: clamp(20px, calc(20px + 1vw), 29px);
+  letter-spacing: calc(1px + 0.02vw);
+  font-weight: bold;
+  width: fit-content;
+  // font-family: "Roboto", sans-serif;
+}
+.h4 {
+  font-size: clamp(18px, calc(14px + 0.7vw), 22px);
+  letter-spacing: calc(1px + 0.01vw);
+  font-weight: bold;
+  width: fit-content;
+  font-family: "Roboto", sans-serif;
+}
+.h5 {
+  font-size: clamp(16px, calc(14px + 0.4vw), 20px);
+  letter-spacing: calc(0.8px + 0.01vw);
+  font-weight: bold;
+  width: fit-content;
+  font-family: "Roboto", sans-serif;
+}
+.p {
+  font-size: clamp(16px, calc(14px + 0.4vw), 20px);
+  letter-spacing: calc(0.4px + 0.01vw);
+  line-height: clamp(30px, calc(24px + 0.66vw), 36px);
+  font-family: "Roboto", sans-serif;
+}
+
+
+
+
+
+.icoFontawesome{
+  font-size: clamp(32px, calc(24px + 2.2vw), 60px);
+  color: $col-light1;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover{
+    color: $col-light1;
+  }
+
+}
+

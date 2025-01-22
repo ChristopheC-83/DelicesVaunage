@@ -1,0 +1,42 @@
+// @import url("https://fonts.googleapis.com/css2?family=Labrada:ital,wght@0,100..900;1,100..900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Satisfy&family=Tangerine:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.bunny.net/css?family=dancing-script:400,700");
+
+@import "custom/variables";
+@import "custom/animations";
+@import "custom/polices";
+@import "custom/shadow";
+@import "custom/navbar_footer";
+@import "custom/forms";
+@import "custom/alert";
+// @import "custom";
+// @import "custom";
+
+.bg-color{
+    background: linear-gradient(90deg, $col-bg1 0%, $col-bg2 100%);
+}
+.bg-color-reverse{
+    background: linear-gradient(90deg, $col-bg2 0%, $col-bg1 100%);
+}
+
+.customContainer{
+    width:96%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.midFlex, .flexMid{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.neon{
+    filter: drop-shadow(#ffc107 0 0 10px);
+
+}
+

@@ -1,0 +1,59 @@
+
+
+
+
+.customForm{
+  max-width: 600px; 
+  border-radius: 0.75rem; 
+  margin: 2rem auto; 
+  background: linear-gradient(to left, $col-bg1, $col-bg2); 
+  border: 1px solid $col-or1; 
+  padding: 0.75rem 1rem; 
+  box-shadow: 0px 0px 15px 6px $col-bg1, inset 0px 0px 10px 4px $col-bg1; 
+
+}
+
+
+/* For responsive padding adjustments */
+@media (min-width: 640px) { /* xs breakpoint */
+  .customContainer {
+    padding: 0.75rem 1.5rem; /* xs:p-3 */
+  }
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+  .customContainer {
+    padding: 0.75rem 2rem; /* md:p-4 */
+  }
+}
+
+.buttonValidation {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1.25rem 0;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  background: $col-bg1;
+  color: $col-light1;
+  transition: all 300ms ease;
+  border : 2px solid $col-light1;
+  box-shadow: 0px 3px 6px  $col-light1;
+}
+
+.buttonValidation:hover {
+  background: $col-light1;
+  color: $col-light2;
+  letter-spacing: 0.3px;
+  box-shadow: none;
+  transform: translateY(3px) scale(0.999);
+}
+
+
+
+// chemin pour styliser les msg erreur dans formulaire
+div.customForm>form>div>div>ul>li {
+  color: rgb(250, 70, 70);
+  font-size: 0.875rem; /* Taille plus petite */
+  margin-top: 0.25rem;
+  margin: 10px 0 ;
+}
