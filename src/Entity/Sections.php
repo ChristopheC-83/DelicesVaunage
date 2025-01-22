@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\SectionsRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: SectionsRepository::class)]
@@ -21,14 +22,27 @@ class Sections
     #[ORM\Column]
     private ?int $position = null;
 
-    #[ORM\Column]
-    private ?bool $is_visible = null;
 
     /**
      * @var Collection<int, Products>
      */
     #[ORM\OneToMany(targetEntity: Products::class, mappedBy: 'section')]
     private Collection $products;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image_1 = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image_2 = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $image_3 = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $banniere = null;
 
     public function __construct()
     {
@@ -64,17 +78,7 @@ class Sections
         return $this;
     }
 
-    public function isVisible(): ?bool
-    {
-        return $this->is_visible;
-    }
-
-    public function setIsVisible(bool $is_visible): static
-    {
-        $this->is_visible = $is_visible;
-
-        return $this;
-    }
+ 
 
     /**
      * @return Collection<int, Products>
@@ -102,6 +106,66 @@ class Sections
                 $product->setSection(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImage1(): ?string
+    {
+        return $this->image_1;
+    }
+
+    public function setImage1(string $image_1): static
+    {
+        $this->image_1 = $image_1;
+
+        return $this;
+    }
+
+    public function getImage2(): ?string
+    {
+        return $this->image_2;
+    }
+
+    public function setImage2(string $image_2): static
+    {
+        $this->image_2 = $image_2;
+
+        return $this;
+    }
+
+    public function getImage3(): ?string
+    {
+        return $this->image_3;
+    }
+
+    public function setImage3(string $image_3): static
+    {
+        $this->image_3 = $image_3;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getBanniere(): ?string
+    {
+        return $this->banniere;
+    }
+
+    public function setBanniere(string $banniere): static
+    {
+        $this->banniere = $banniere;
 
         return $this;
     }
