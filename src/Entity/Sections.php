@@ -44,6 +44,9 @@ class Sections
     #[ORM\Column(length: 255)]
     private ?string $banniere = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -166,6 +169,18 @@ class Sections
     public function setBanniere(string $banniere): static
     {
         $this->banniere = $banniere;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }

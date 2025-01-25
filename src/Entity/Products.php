@@ -32,6 +32,9 @@ class Products
     #[ORM\ManyToOne(inversedBy: 'products')]
     private ?Sections $section = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $image = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +108,18 @@ class Products
     public function setSection(?Sections $section): static
     {
         $this->section = $section;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }
