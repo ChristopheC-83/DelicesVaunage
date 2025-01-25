@@ -1,0 +1,9 @@
+<img src="{{ asset('images/categories/' ~ section.image1) }}" alt="Image section" class="w-1/2">
+<div class="flex flex-wrap w-1/2">
+	<article class="size-1/2">{{ section.name }}
+	</article>
+	<img src="{{ asset('images/categories/' ~ section.image2) }}" alt="Image section" class="size-1/2">
+	<img src="{{ asset('images/categories/' ~ section.image3) }}" alt="Image section" class="size-1/2 ">
+	<article class="size-1/2">{{ section.description |raw }}
+	</article>
+</div>

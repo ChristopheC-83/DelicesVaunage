@@ -5,6 +5,14 @@
 
 {% block body %}
 
-	{% include "public/home/components/section_pains.html.twig"%}
+	{% include 'components/spacing.html.twig' %}
+	<div class="flex flex-col w-full customContainer">
+		{% for section in sections  %}
+			<section class="flex w-full even:flex-row-reverse max-sm:flex-col">
+				{% include 'public/home/components/section.html.twig' with {'section': section} %}
+			</section>
+		{% endfor %}
+	</div>
+
 
 {% endblock %}

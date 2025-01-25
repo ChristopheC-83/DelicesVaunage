@@ -48,28 +48,28 @@ class SectionsCrudController extends AbstractCrudController
                 ->setLabel('banniere')
                 ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
                 ->setUploadDir('/public/images/categories')
-                ->setBasePath('uploads/categories')
+                ->setBasePath('images/categories')
                 ->setRequired(false)
                 ->setHelp('Banniere sur la page dédiée'),
                 ImageField::new('image_1')
                 ->setLabel('image 1')
                 ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
                 ->setUploadDir('/public/images/categories')
-                ->setBasePath('uploads/categories')
+                ->setBasePath('images/categories')
                 ->setRequired($required)
                 ->setHelp('image1 de la catégorie'),
             ImageField::new('image_2')
                 ->setLabel('image 2')
                 ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
                 ->setUploadDir('/public/images/categories')
-                ->setBasePath('uploads/categories')
+                ->setBasePath('images/categories')
                 ->setRequired(false)
                 ->setHelp('image2 de la catégorie'),
             ImageField::new('image_3')
                 ->setLabel('image 3')
                 ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
                 ->setUploadDir('/public/images/categories')
-                ->setBasePath('uploads/categories')
+                ->setBasePath('images/categories')
                 ->setRequired(false)
                 ->setHelp('image3 de la catégorie'),
         ];

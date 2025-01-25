@@ -44,7 +44,10 @@
     transform: rotateY(-360deg);
   }
 }
-/* Utilisation des variables */
+.text-shadow-lg {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+}
+
 .h1 {
   font-size: clamp(32px, 24px + 2.2vw, 60px);
   letter-spacing: calc(1px + 0.12vw);
