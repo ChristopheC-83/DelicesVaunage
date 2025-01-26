@@ -19,12 +19,12 @@
 			{% endblock %}
 		{% endblock %}
 	</head>
-	<body class="flex flex-col bg-col-dark min-h-svh">
+	<body class="flex flex-col overflow-x-hidden bg-col-dark min-h-svh">
 
 		{% include "components/header/header.html.twig" %}
 		{% include 'components/spacing.html.twig' %}
 
-		<main class="flex flex-col flex-grow"> {% block body %}{% endblock %}
+		<main class="flex flex-col flex-grow customContainer"> {% block body %}{% endblock %}
 			</main>
 
 			{% include 'components/spacing.html.twig' %}

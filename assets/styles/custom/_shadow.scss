@@ -3,50 +3,18 @@
 }
 
 .text-shadow {
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px 3px #000;
 }
 
-.color-shadow-md-navbar {
-  box-shadow: 0px 0px 10px 3px $col-light1;
-
-  // Media query pour écrans de plus de 768px
-  @media (min-width: 768px) {
-    box-shadow: none;
-  }
+.customShadow{
+  box-shadow: 5px 5px 15px 5px $col-bg1;
+}
+.customShadowFooter{
+  box-shadow: -5px -5px 15px 5px $col-bg1;
 }
 
-.color-shadow-md {
-  box-shadow: 2px 2px 6px 2px $col-light1;
-}
-.color-shadow-card {
-  box-shadow: 0px 0px 10px 3px $col-light1;
-
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    box-shadow: 0px 0px 15px 6px $col-light1;
-  }
-}
-
-.color-shadow-inset-md {
-  box-shadow: inset 0px 0px 10px 3px $col-light1;
-}
-.color-shadow-lg {
-  box-shadow: 0px 0px 15px 6px $col-light1;
-}
-.color-shadow-xl {
-  box-shadow: 0px 7px 30px 12px $col-light1;
-}
-
-.color-shadow-none {
-  box-shadow: none;
-}
-
-.customShadow-md {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-}
-.customShadow-lg {
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-}
-.customShadow-xl {
-  box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.33);
+.sectionNameShadow{
+  box-shadow: 0 0 5px 2px $col-light1,
+    inset 0 0 5px 2px $col-light1;
+  ;
 }

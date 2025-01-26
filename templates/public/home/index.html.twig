@@ -6,9 +6,9 @@
 {% block body %}
 
 	{% include 'components/spacing.html.twig' %}
-	<div class="flex flex-col w-full customContainer">
+	<div class="flex flex-col w-full mb-10 text-white customShadow customContainer">
 		{% for section in sections  %}
-			<section class="flex w-full even:flex-row-reverse max-sm:flex-col">
+			<section class="flex w-full even:flex-row-reverse max-md:flex-col even:max-md:flex-col">
 				{% include 'public/home/components/section.html.twig' with {'section': section} %}
 			</section>
 		{% endfor %}
