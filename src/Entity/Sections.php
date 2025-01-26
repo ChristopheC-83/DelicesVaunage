@@ -11,6 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: SectionsRepository::class)]
 class Sections
 {
+    public function __toString(): string
+    {
+        return $this->name; // Retourne le nom ou un autre champ significatif
+    }
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

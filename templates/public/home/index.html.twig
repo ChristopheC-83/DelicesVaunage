@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}Les Délices de la Vaunage
 {% endblock %}
 
 {% block body %}
@@ -11,8 +11,9 @@
 			<section class="flex w-full even:flex-row-reverse max-md:flex-col even:max-md:flex-col">
 				{% include 'public/home/components/section.html.twig' with {'section': section} %}
 			</section>
+			<div class="last-of-type:hidden backdrop-blur-md">
+				{% include 'components/spacing.html.twig' %}
+			</div>
 		{% endfor %}
 	</div>
-
-
 {% endblock %}

@@ -1,15 +1,10 @@
 <img src="{{ asset('images/categories/' ~ section.image1) }}" alt="Image section" class="object-cover w-1/2 aspect-square max-md:w-full">
 <div class="flex flex-wrap w-1/2 aspect-square max-md:w-full">
-	<a href="/" class="relative z-10 flex flex-col items-center justify-around p-2 overflow-hidden cursor-pointer size-1/2 backdrop-blur-lg md:p-3 lg:p-4 group">
+	<a href="{{ path('app_categorie',{'categorie':section.slug} )}}" class="relative z-10 flex flex-col items-center justify-around p-2 overflow-hidden cursor-pointer size-1/2 backdrop-blur-md md:p-3 lg:p-4 group">
 		<div></div>
 		<div class="absolute inset-0 bg-neutral-600/75 -z-10 sectionNameShadow"></div>
 		<h2 class="text-center capitalize h2 font-handscript text-shadow">{{ section.name }}</h2>
-		<i class="
-		
-		translate-x-[-125px]
-		xs:translate-x-[-200px]
-		xl:translate-x-[-220px]
-		 fa-solid fa-circle-right fa-xl xs:fa-2xl group-hover:translate-x-0 duration-500 ease-in-out		"></i>
+		<i class="translate-x-[-125px] xs:translate-x-[-200px] xl:translate-x-[-220px] fa-solid fa-circle-right fa-xl xs:fa-2xl group-hover:translate-x-0 duration-500 ease-in-out"></i>
 	</a>
 	<img src="{{ asset('images/categories/' ~ section.image2) }}" alt="Image section" class="duration-500 hover:z-20 size-1/2 brightness-50 hover:scale-105 hover:brightness-100 hover:rounded-2xl">
 

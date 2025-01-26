@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Products;
+use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -38,7 +39,9 @@ class ProductsCrudController extends AbstractCrudController
             $required = false;
         }
         return [
-            AssociationField::new('section')->setHelp('Catégorie du produit'),
+            AssociationField::new('section')
+                ->setHelp('Catégorie du produit')
+                ->setRequired(true),
             TextField::new('name')->setLabel('Nom')->setHelp('Nom du produit'),
             NumberField::new('price')->setLabel('prix')->setHelp('prix du produit sans le sigle€'),
             TextEditorField::new('description')->setLabel('description')->setHelp('description du produit'),
