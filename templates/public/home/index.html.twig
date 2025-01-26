@@ -8,7 +8,7 @@
 	{% include 'components/spacing.html.twig' %}
 	<div class="flex flex-col w-full mb-10 text-white customShadow customContainer">
 		{% for section in sections  %}
-			<section class="flex w-full even:flex-row-reverse max-md:flex-col even:max-md:flex-col">
+			<section class="flex w-full [&:nth-child(3)]:flex-row-reverse max-md:flex-col [&:nth-child(3)]:max-md:flex-col [&:nth-child(7)]:flex-row-reverse [&:nth-child(7)]:max-md:flex-col">
 				{% include 'public/home/components/section.html.twig' with {'section': section} %}
 			</section>
 			<div class="last-of-type:hidden backdrop-blur-md">

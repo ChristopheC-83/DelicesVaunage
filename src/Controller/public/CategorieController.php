@@ -24,12 +24,12 @@ final class CategorieController extends AbstractController
     public function index($categorie): Response
     {
         $categorie = $this->sectionRepository->findOneBy(['slug' => $categorie]);
-        // $products = $this->productsRepository->findBy(['section' => $categorie]);
+        $products = $this->productsRepository->findBy(['section' => $categorie]);
 
-        // dd($categorie);
 
         return $this->render('public/categorie/index.html.twig',[
-            'categorie' => $categorie
+            'categorie' => $categorie,
+            'products' => $products
         ]);
     }
 }
