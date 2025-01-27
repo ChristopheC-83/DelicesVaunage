@@ -1,20 +1,35 @@
+.customForm form {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  margin: 2rem auto;
+  background: linear-gradient(to left, $col-bg1, $col-bg2);
+  border: 1px solid $col-or1;
+  padding: 0.75rem 1rem;
+  box-shadow: 0px 0px 15px 6px $col-bg1, inset 0px 0px 10px 4px $col-bg1;
 
+  label {
+    color: $col-light1;
+    margin-bottom: 5px;
+  }
 
-
-
-.customForm{
-  max-width: 600px; 
-  border-radius: 0.75rem; 
-  margin: 2rem auto; 
-  background: linear-gradient(to left, $col-bg1, $col-bg2); 
-  border: 1px solid $col-or1; 
-  padding: 0.75rem 1rem; 
-  box-shadow: 0px 0px 15px 6px $col-bg1, inset 0px 0px 10px 4px $col-bg1; 
-
+  input,
+  textarea {
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
 }
 
+.btnDisabled {
+  background: $col-bg2;
+  color: #a03131;
+  border: 1px solid $col-bg1;
+  cursor: not-allowed;
+  pointer-events: none;
 
-
+  
+}
 
 .buttonValidation {
   width: 100%;
@@ -22,27 +37,27 @@
   margin: 1.25rem 0;
   font-weight: bold;
   border-radius: 0.5rem;
-  background: $col-bg1;
+  background: $col-bg2;
   color: $col-light1;
   transition: all 300ms ease;
-  border : 2px solid $col-light1;
-  box-shadow: 0px 3px 6px  $col-light1;
+  border: 2px solid $col-light1;
+  box-shadow: 0px 3px 6px $col-light1;
+  cursor: pointer;
+
 }
 
 .buttonValidation:hover {
   background: $col-light1;
-  color: $col-light2;
+  color: $col-bg1;
   letter-spacing: 0.3px;
   box-shadow: none;
   transform: translateY(3px) scale(0.999);
 }
 
-
-
 // chemin pour styliser les msg erreur dans formulaire
-div.customForm>form>div>div>ul>li {
+div.customForm > form > div > div > ul > li {
   color: rgb(250, 70, 70);
   font-size: 0.875rem; /* Taille plus petite */
   margin-top: 0.25rem;
-  margin: 10px 0 ;
+  margin: 10px 0;
 }

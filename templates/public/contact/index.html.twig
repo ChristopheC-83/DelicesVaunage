@@ -1,20 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}
+	Contact | Cloud du Compagnon
+{% endblock %}
+
+{% block description %}
+	Une question ? Une suggestion ? Contactez-nous !
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<section>
+		<div class="customForm">
+			<form action="{{ path('app_contact') }}" method="post" id="contactForm">
+				<label for="pseudo">NOM Prénom :</label>
+				<p class="hidden text-red-500" id="pseudoError">Voter nom doit contenir au moins 3 lettres.</p>
+				<input type="text" id="pseudo" name="_pseudo">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/C2Com_pro/delices-vaunage/src/Controller/public/ContactController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/C2Com_pro/delices-vaunage/templates/public/contact/index.html.twig</code></li>
-    </ul>
-</div>
+				<label for="email">Email :</label>
+				<p class="hidden text-red-500" id="emailError">Veuillez entrer un email valide.</p>
+				<input type="email" id="email" name="_email">
+                
+				<label for="tel">Téléphone :</label>
+				<p class="hidden text-red-500" id="telError">Veuillez entrer un numéro de téléphone.</p>
+				<input type="tel"  id="tel" name="_tel">
+
+
+				<label for="message">Message:</label>
+				<p class="hidden text-red-500" id="messageError">Le message doit contenir au moins 10 caractères.</p>
+				<textarea name="_message" id="message" rows="6" class="w-full"></textarea>
+
+				<button class="buttonValidation" id="btnSendMail">Envoyer le message</button>
+
+                <p class="my-6 text-center p text-col-light">Ou par mail à : <br>
+                contact@maildelicevaunage.fr</p>
+
+                <p class="mb-2 text-xs text-neutral-400">Nous ne gardons aucune donnée. Votre message et vos coordonnées nous serons transmises uniquement par mail sans que nous ne la collections dans une base de données.</p>
+			</form>
+		</div>
+	</section>
+
+	 <script src="{{asset('javascript/contactForm.js')}}"></script>
 {% endblock %}
