@@ -19,40 +19,33 @@
 				<a href="/" class="mb-6 duration-300 p whitespace-nowraptext-white hover:translate-x-3">
 					<i class="mr-2 fa-solid fa-paper-plane"></i>Nous envoyer un message</a>
 			</div>
-			<div class="grid grid-cols-2 mt-2 gap-8sm:gap-6 sm:grid-cols-3">
+			<div class="grid grid-cols-2 gap-8 mt-2 sm:gap-6 sm:grid-cols-3">
 				<div>
 					<h2 class="mb-6 text-sm font-semibold uppercase">Catégories</h2>
 					<ul class="font-medium text-neutral-400">
-						<li class="mb-4 ">
-							<a href="https://flowbite.com/" class="e hover:underline">Flowbite</a>
-						</li>
-						<li>
-							<a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-						</li>
+						{% for item in sections %}
+							<li class="mb-4 ">
+								<a href="{{ path('app_categorie',{'categorie':item.slug} )}}" class="capitalize hover:underline">{{ item.name }}</a>
+							</li>
+						{% endfor %}
+
 					</ul>
 				</div>
 				<div>
-					<h2 class="mb-6 text-sm font-semibold uppercase ">Follow us</h2>
+					<h2 class="mb-6 text-sm font-semibold uppercase ">Informations</h2>
 					<ul class="font-medium text-neutral-400 ">
 						<li class="mb-4">
-							<a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+							<a href="/" class="hover:underline ">C.G.U.</a>
 						</li>
-						<li>
-							<a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+						<li class="mb-4">
+							<a href="/" class="hover:underline">Mentions Légales</a>
+						</li>
+						<li class="mb-4">
+							<a href="/" class="hover:underline">Allergènes</a>
 						</li>
 					</ul>
 				</div>
-				<div>
-					<h2 class="mb-6 text-sm font-semibold uppercase ">Legal</h2>
-					<ul class="font-medium text-neutral-400 ">
-						<li class="mb-4">
-							<a href="#" class="hover:underline">Privacy Policy</a>
-						</li>
-						<li>
-							<a href="#" class="hover:underline">Terms &amp; Conditions</a>
-						</li>
-					</ul>
-				</div>
+
 			</div>
 		</div>
 		<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
