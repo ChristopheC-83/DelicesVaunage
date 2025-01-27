@@ -20,7 +20,7 @@ final class CategorieController extends AbstractController
         $this->productsRepository = $productsRepository;
     }
     
-    #[Route('/caterorie/{categorie}', name: 'app_categorie')]
+    #[Route('/categorie/{categorie}', name: 'app_categorie')]
     public function index($categorie): Response
     {
         $categorie = $this->sectionRepository->findOneBy(['slug' => $categorie]);
