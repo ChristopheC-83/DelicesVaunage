@@ -7,10 +7,23 @@
 	| Les Délices de la Vaunage
 {% endblock %}
 
+
+{% block description %}
+	{% if categorie.name =="nos pains"%}
+		De la baguette tradition à la fougasse, découvrez nos pains artisanaux au centre de Calvisson, à côté de la Poste.
+	{% elseif categorie.name =="nos sandwichs" %}
+		Des sandwichs à Calvisson, à côté de la Poste ? Oui aux Délices de la Vaunage !
+	{% elseif categorie.name =="nos gourmandises" %}
+		Un gateaux ? une viennoiserie ? un donuts ? Nous avons ce qu'il vous faut pour émerveiller vos papilles.
+	{% endif %}
+{% endblock %}
+
+
 {% block body %}
 	<h1 class="w-full py-3 mx-auto text-center underline capitalize rounded-2xl h1 font-handscript text-col-gold text-outline text-shadow-lg lg:mt-10 xl:mt-0 underline-offset-8">{{categorie}}
 	</h1>
-	<div class="flex flex-wrap items-stretch justify-center gap-8 mt-6 customContainer md:mt-8 lg:mt-10">
+	{% include 'components/spacing.html.twig' %}
+	<div class="flex flex-wrap items-stretch justify-center mt-6 gap-x-3 gap-y-5 xs:gap-6 md:gap-8 customContainer md:mt-8 lg:mt-10">
 		{% for product in products %}
 			{% include 'public/categorie/components/card.html.twig' with {'product': product} %}
 		{% endfor %}

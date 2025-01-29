@@ -1,12 +1,12 @@
 {# les liens de la navbar #}
 {% set navItems = [
-    {'name': 'Présentation', 'path': 'app_home'},
+    {'name': 'Actualités', 'path': 'app_news'},
 ] %}
 
 
 <nav class="relative border-gray-200">
 	<div class="flex flex-wrap items-center justify-between customContainer">
-		<a href="https://flowbite.com/" class="relative flex items-center p-2 overflow-hidden rounded-full">
+		<a href="{{ path ('app_home')}}" class="relative flex items-center p-2 overflow-hidden rounded-full">
 			<img src="/images/initiales/logo_remove_bg.png" class="w-[20vw] max-w-[220px] contrast-110 neon" alt="logo delices de la vaunage"/>
 			<div class=" absolute inset-0 bg-[#111111] -z-10"></div>
 		</a>

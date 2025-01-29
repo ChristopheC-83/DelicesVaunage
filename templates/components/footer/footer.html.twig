@@ -1,10 +1,19 @@
+{# les liens de la navbar #}
+{% set navItems = [
+    {'name': 'C.G.U', 'path': 'app_cgu'},
+    {'name': 'Mentions Légales', 'path': 'app_legal'},
+    {'name': 'Allergènes', 'path': 'app_allergens'},
+    {'name': 'Actualités', 'path': 'app_news'},
+    {'name': 'Qui sommes-nous ?', 'path': 'app_presentation'}, 
+] %}
+
 {% include 'components/spacing.html.twig' %}
 <footer class="text-white border-t border-gray-200 bg-col-dark customShadowFooter">
 	<div class="w-full max-w-screen-xl p-4 py-6 mx-auto lg:py-8">
 		<div class="md:flex md:justify-between">
 			<div class="flex flex-col mb-6 md:mb-0 gap-y-2">
 
-				<a class="flex items-center cursor-pointer gap-x-2" href="/">
+				<a class="flex items-center cursor-pointer gap-x-2" href="{{ path ('app_home')}}">
 					<div class="relative flex items-center p-2 overflow-hidden rounded-full">
 						<img src="/images/initiales/logo_remove_bg.png" class="size-8 contrast-110 neon" alt="logo delices de la vaunage"/>
 						<div class=" absolute inset-0 bg-[#111111] -z-10"></div>
@@ -29,20 +38,18 @@
 							</li>
 						{% endfor %}
 
+
 					</ul>
 				</div>
 				<div>
 					<h2 class="mb-6 text-sm font-semibold uppercase ">Informations</h2>
 					<ul class="font-medium text-neutral-400 ">
-						<li class="mb-4">
-							<a href="/" class="hover:underline ">C.G.U.</a>
-						</li>
-						<li class="mb-4">
-							<a href="/" class="hover:underline">Mentions Légales</a>
-						</li>
-						<li class="mb-4">
-							<a href="/" class="hover:underline">Allergènes</a>
-						</li>
+						{% for item in navItems %}
+							<li class="mb-4 ">
+								<a href="{{ path (item.path )}}" class="capitalize hover:underline">{{ item.name }}</a>
+							</li>
+						{% endfor %}
+
 					</ul>
 				</div>
 
