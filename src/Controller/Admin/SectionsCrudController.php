@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Sections;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -41,8 +42,8 @@ class SectionsCrudController extends AbstractCrudController
         return [
             TextField::new('name')->setLabel('Titre')->setHelp('Titre de la catégorie'),
             SlugField::new('slug')->setLabel('URL')->setTargetFieldName('name')->hideOnIndex()->setHelp('URL de la catégorie généré automatiquement !'),
+            BooleanField::new('isVisible')->setLabel('visible')->setHelp('produit visible sur le site'),
             NumberField::new('position')->setLabel('position')->setHelp('position dans l\'ordre d\'apparition sur la page d\'accueil'),
-            
             TextEditorField::new('description')->setLabel('Description')->setHelp('Description de la catégorie'),
             ImageField::new('banniere')
                 ->setLabel('banniere')
@@ -51,7 +52,7 @@ class SectionsCrudController extends AbstractCrudController
                 ->setBasePath('images/categories')
                 ->setRequired(false)
                 ->setHelp('Banniere sur la page dédiée'),
-                ImageField::new('image_1')
+            ImageField::new('image_1')
                 ->setLabel('image 1')
                 ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
                 ->setUploadDir('/public/images/categories')

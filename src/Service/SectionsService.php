@@ -15,6 +15,12 @@ class SectionsService
 
     public function getCategories(): array
     {
-        return $this->sectionsRepository->findAll();
+
+        $sections = $this->sectionsRepository->findBy(
+            ['isVisible' => true], 
+            ['position' => 'ASC']
+        );
+        return $sections;
+        // return $this->sectionsRepository->findAll();
     }
 }

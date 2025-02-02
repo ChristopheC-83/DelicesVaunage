@@ -52,6 +52,9 @@ class Sections
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
+    #[ORM\Column]
+    private ?bool $isVisible = null;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -186,6 +189,18 @@ class Sections
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function isVisible(): ?bool
+    {
+        return $this->isVisible;
+    }
+
+    public function setIsVisible(bool $isVisible): static
+    {
+        $this->isVisible = $isVisible;
 
         return $this;
     }

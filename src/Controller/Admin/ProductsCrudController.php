@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Products;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -13,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Filter\EntityFilter;
 
 class ProductsCrudController extends AbstractCrudController
 {
@@ -30,6 +32,12 @@ class ProductsCrudController extends AbstractCrudController
         ;
     }
 
+    public function configureFilters(Filters $filters): Filters
+{
+    return $filters
+        ->add(EntityFilter::new('section')->setLabel('Filtrer par catégorie'));
+}
+
     public function configureFields(string $pageName): iterable
     {
 
@@ -41,7 +49,7 @@ class ProductsCrudController extends AbstractCrudController
         return [
             AssociationField::new('section')
                 ->setHelp('Catégorie du produit')
-                ->setRequired(true),
+                ->setRequired(true)->setFormTypeOption('placeholder', 'Choisir une catégorie'),
             TextField::new('name')->setLabel('Nom')->setHelp('Nom du produit'),
             NumberField::new('price')->setLabel('prix')->setHelp('prix du produit sans le sigle€'),
             TextEditorField::new('description')->setLabel('description')->setHelp('description du produit'),

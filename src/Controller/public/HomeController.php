@@ -9,11 +9,11 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class HomeController extends AbstractController
 {
-    private $sectionRepository;
+    private $sectionsRepository;
 
-    public function __construct(SectionsRepository $sectionRepository)
+    public function __construct(SectionsRepository $sectionsRepository)
     {
-        $this->sectionRepository = $sectionRepository;
+        $this->sectionsRepository = $sectionsRepository;
     }
 
 
@@ -21,8 +21,10 @@ final class HomeController extends AbstractController
     public function index(): Response
     {
 
-        $sections = $this->sectionRepository->findAll();
-
+        $sections = $this->sectionsRepository->findBy(
+            ['isVisible' => true], 
+            ['position' => 'ASC']
+        );
         return $this->render('public/home/index.html.twig', [
             'sections' => $sections
         ]);

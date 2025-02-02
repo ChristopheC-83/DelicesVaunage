@@ -1,26 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	Présentation | Les Délices de la Vaunage
+{% block title %}Qui-sommes-nous ? | Les Délices de la Vaunage
 {% endblock %}
-
 {% block description %}
-	Aux Délices de la Vaunage , qui sommes-nous ? Découvrez notre histoire, nos valeurs et notre équipe.
+	Découvrez nos pâtisseries plaines d'amour, nos viennoiseries gourmandes, nos sandwichs généreux et nos pains artisanaux au centre de Calvisson, à côté de la Poste.
 {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<h1 class="w-full py-3 mx-auto text-center underline capitalize rounded-2xl h1 font-handscript text-col-gold text-outline text-shadow-lg lg:mt-10 xl:mt-0 underline-offset-8">Qui Sommes-Nous ?
+	</h1>
+	{% include 'components/spacing.html.twig' %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<div
+		class="flex flex-col items-center justify-center lg:items-stretch lg:flex-row ">
+		{# <article class="w-full bg-col-light"> #}
+		<article class="w-[90vw] max-w-[600px] p-2 text-justify backdrop-blur-lg bg-col-dark/75 md:p-3 lg:p-4 midFlex text-shadow text-col-light customShadow  ">
+			<h4 class="relative h5 lg:w-full">{{presentation.text|raw}}
+			</h4>
+		</article>
+		<img src="{{ asset('images/presentation/' ~ presentation.banniere) }}" alt="Image section" class=" w-[90vw] max-w-[600px] h-auto customShadow">
+	</div>
+	{% include 'components/spacing.html.twig' %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/C2Com_pro/delices-vaunage/src/Controller/public/PresentationController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/C2Com_pro/delices-vaunage/templates/public/presentation/index.html.twig</code></li>
-    </ul>
-</div>
+
+	{% include 'public/informations/presentation/components/slider.html.twig'  with {'presentation': presentation} %}
+	{% include 'components/spacing.html.twig' %}
+
+	<article class="flex flex-col w-[90vw] max-w-[1200px] mx-auto p-2 text-justify backdrop-blur-lg bg-col-dark/75 md:p-3 lg:p-4 midFlex text-shadow text-col-light customShadow">
+		<h4 class="text-justify h5">{{presentation.text2|raw}}</h4>
+	</article>
+	{% include 'components/spacing.html.twig' %}
 {% endblock %}

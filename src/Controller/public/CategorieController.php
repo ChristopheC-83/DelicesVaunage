@@ -19,15 +19,18 @@ final class CategorieController extends AbstractController
         $this->sectionRepository = $sectionRepository;
         $this->productsRepository = $productsRepository;
     }
-    
+
     #[Route('/categorie/{categorie}', name: 'app_categorie')]
     public function index($categorie): Response
     {
         $categorie = $this->sectionRepository->findOneBy(['slug' => $categorie]);
-        $products = $this->productsRepository->findBy(['section' => $categorie]);
+        $products = $this->productsRepository->findBy(
+            ['section' => $categorie, 'is_visible' => true], 
+            ['position' => 'ASC'] 
+        );
 
 
-        return $this->render('public/categorie/index.html.twig',[
+        return $this->render('public/categorie/index.html.twig', [
             'categorie' => $categorie,
             'products' => $products
         ]);
