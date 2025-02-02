@@ -3,9 +3,11 @@
     {'name': 'C.G.U', 'path': 'app_cgu'},
     {'name': 'Mentions Légales', 'path': 'app_legal'},
     {'name': 'Allergènes', 'path': 'app_allergens'},
-    {'name': 'Actualités', 'path': 'app_news'},
     {'name': 'Qui sommes-nous ?', 'path': 'app_presentation'}, 
 ] %}
+
+
+    {# {'name': 'Actualités', 'path': 'app_news'}, #}
 
 {% include 'components/spacing.html.twig' %}
 <footer class="text-white border-t border-gray-200 bg-col-dark customShadowFooter">
@@ -25,8 +27,15 @@
 					<i class="mr-2 fa-solid fa-phone"></i>Tel : 04.66.01.02.03</a>
 				<a href="mailto:" class="duration-300 p whitespace-nowraptext-white hover:translate-x-3">
 					<i class="mr-2 fa-solid fa-envelope"></i>Nous envoyer un mail</a>
-				<a href="/" class="mb-6 duration-300 p whitespace-nowraptext-white hover:translate-x-3">
+				<a href="{{path('app_contact')}}" class="mb-6 duration-300 p whitespace-nowraptext-white hover:translate-x-3">
 					<i class="mr-2 fa-solid fa-paper-plane"></i>Nous envoyer un message</a>
+				<p class="p">
+					<i class="mr-2 fa-solid fa-house"></i>Nous rendre visite :
+					<br>
+					9 place Mireio
+					<br>
+					30420 Calvisson
+				</p>
 			</div>
 			<div class="grid grid-cols-2 gap-8 mt-2 sm:gap-6 sm:grid-cols-3">
 				<div>
