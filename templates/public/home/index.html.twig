@@ -9,9 +9,9 @@
 {% block body %}
 
 	{% include 'components/spacing.html.twig' %}
-	<div class="flex flex-col w-full mb-10 text-white customShadow customContainer">
+	<div class="flex flex-col w-full mb-10 text-white customShadow customContainer apparition-card">
 		{% for section in sections  %}
-			<section class="flex w-full [&:nth-child(3)]:flex-row-reverse max-md:flex-col-reverse [&:nth-child(3)]:max-md:flex-col-reverse [&:nth-child(7)]:flex-row-reverse [&:nth-child(7)]:max-md:flex-col-reverse">
+			<section class="flex w-full [&:nth-child(3)]:flex-row-reverse max-md:flex-col-reverse [&:nth-child(3)]:max-md:flex-col-reverse [&:nth-child(7)]:flex-row-reverse [&:nth-child(7)]:max-md:flex-col-reverse apparition-card" style="animation-delay: {{ loop.index0 * 0.35 }}s">
 				{% include 'public/home/components/section.html.twig' with {'section': section} %}
 			</section>
 			<div class="last-of-type:hidden backdrop-blur-md">
