@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Perdu ? | Les Délices de la Vaunage
+{% endblock %}
+{% block description %}
+	Découvrez nos pâtisseries plaines d'amour, nos viennoiseries gourmandes, nos sandwichs généreux et nos pains artisanaux au centre de Calvisson, à côté de la Poste.
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="w-full py-3 mx-auto text-center underline capitalize rounded-2xl h1 font-handscript text-col-gold text-outline text-shadow-lg lg:mt-10 xl:mt-0 underline-offset-8">Vous êtes comme le pain ?
+		<br>Perdu ?
+	</h1>
+	<section class="p-4 my-6 rounded-lg midFlex xs:p-8 md:p-12 customContainer bg-col-dark text-col-light customShadow">
+		<h2 class="cursor-pointer h2">
+			<a href="{{path('app_home')}}" >On retourne à l'accueil ?</a>
+		</h2>
+	{% endblock %}
