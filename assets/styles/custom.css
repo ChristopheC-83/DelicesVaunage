@@ -173,7 +173,7 @@
 }
 
 .customShadow {
-  box-shadow: 5px 5px 15px 5px #505050;
+  box-shadow: 5px 5px 20px 5px rgba(255, 255, 255, 0.5019607843);
 }
 
 .customShadowFooter {
@@ -340,7 +340,7 @@ div.customForm > form > div > div > ul > li {
 }
 
 body {
-  background: url("../../public/images/initiales/logo_remove_bg_little.png") 0px 0px/120px 120px repeat, url("../../public/images/initiales/logo_remove_bg_little.png") 60px 60px/120px 120px repeat, linear-gradient(to right, #505050 50%, white 50%) 0 0/100px 100px repeat;
+  background: url("../../public/images/initiales/logo_remove_bg_little.png") 0px 0px/120px 120px repeat, url("../../public/images/initiales/logo_remove_bg_little.png") 60px 60px/120px 120px repeat, #505050 50%;
 }
 
 .bg-color {

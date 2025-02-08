@@ -19,8 +19,9 @@ body {
     background: 
         url("../../public/images/initiales/logo_remove_bg_little.png") 0px 0px / 120px 120px repeat,
         url("../../public/images/initiales/logo_remove_bg_little.png") 60px 60px / 120px 120px repeat,
-        linear-gradient(to right, $col-bg1 50%, white 50%) 0 0 / 100px 100px repeat;
-}
+        $col-bg1 50%;
+    }
+    //linear-gradient(to right, $col-bg1 50%, white 50%) 0 0 / 100px 100px repeat;
 
 .bg-color{
     background: linear-gradient(90deg, $col-bg1 0%, $col-bg2 100%);
