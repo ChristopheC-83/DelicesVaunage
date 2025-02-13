@@ -4,16 +4,24 @@ namespace App\Twig;
 
 use App\Service\SectionsService;
 use Twig\Extension\AbstractExtension;
+use Twig\Extension\GlobalsInterface;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
-class AppExtensions extends AbstractExtension
+class AppExtensions extends AbstractExtension implements GlobalsInterface
 {
     private SectionsService $sectionsService;
 
     public function __construct(SectionsService $sectionsService)
     {
         $this->sectionsService = $sectionsService;
+    }
+
+    public function getGlobals(): array
+    {
+        return [
+            'sections' => $this->sectionsService->getCategories(),
+        ];
     }
 
     public function getFilters()

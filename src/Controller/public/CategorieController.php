@@ -23,7 +23,7 @@ final class CategorieController extends AbstractController
     #[Route('/categorie/{categorie}', name: 'app_categorie')]
     public function index($categorie): Response
     {
-        $categorie = $this->sectionRepository->findOneBy(['slug' => $categorie]);
+        $categorie = $this->sectionRepository->findOneBy(['slug' => $categorie, 'isVisible' => true]);
         $products = $this->productsRepository->findBy(
             ['section' => $categorie, 'is_visible' => true], 
             ['position' => 'ASC'] 

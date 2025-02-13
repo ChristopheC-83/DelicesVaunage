@@ -7,7 +7,7 @@
 ] %}
 
 
-    {# {'name': 'Actualités', 'path': 'app_news'}, #}
+{# {'name': 'Actualités', 'path': 'app_news'}, #}
 
 {% include 'components/spacing.html.twig' %}
 <footer class="text-white border-t border-gray-200 bg-col-dark customShadowFooter">
@@ -23,9 +23,9 @@
 					<p class="self-center font-semibold h3 whitespace-nowraptext-white">Les Délices de la Vaunage</p>
 				</a>
 
-				<a href="tel:+" class="self-start font-semibold duration-300 p whitespace-nowraptext-white hover:translate-x-3">
-					<i class="mr-2 fa-solid fa-phone"></i>Tel : 04.66.01.02.03</a>
-				<a href="mailto:" class="duration-300 p whitespace-nowraptext-white hover:translate-x-3">
+				<a href="tel:+0982404107" class="self-start font-semibold duration-300 p whitespace-nowraptext-white hover:translate-x-3">
+					<i class="mr-2 fa-solid fa-phone"></i>Tel :  09 82 40 41 07</a>
+				<a href="mailto:contact@delices-vaunage.fr" class="duration-300 p whitespace-nowraptext-white hover:translate-x-3">
 					<i class="mr-2 fa-solid fa-envelope"></i>Nous envoyer un mail</a>
 				<a href="{{path('app_contact')}}" class="mb-6 duration-300 p whitespace-nowraptext-white hover:translate-x-3">
 					<i class="mr-2 fa-solid fa-paper-plane"></i>Nous envoyer un message</a>
@@ -42,9 +42,11 @@
 					<h2 class="mb-6 text-sm font-semibold uppercase">Catégories</h2>
 					<ul class="font-medium text-neutral-400">
 						{% for item in sections %}
-							<li class="mb-4 ">
-								<a href="{{ path('app_categorie',{'categorie':item.slug} )}}" class="capitalize hover:underline">{{ item.name }}</a>
-							</li>
+							{% if  item.isVisible %}
+								<li class="mb-4 ">
+									<a href="{{ path('app_categorie',{'categorie':item.slug} )}}" class="capitalize hover:underline">{{ item.name }}</a>
+								</li>
+							{% endif %}
 						{% endfor %}
 
 

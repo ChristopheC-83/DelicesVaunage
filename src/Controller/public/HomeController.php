@@ -21,8 +21,10 @@ final class HomeController extends AbstractController
     public function index(): Response
     {
 
+        
+
         $sections = $this->sectionsRepository->findBy(
-            ['isVisible' => true], 
+            ['isVisible' => true],
             ['position' => 'ASC']
         );
         return $this->render('public/home/index.html.twig', [

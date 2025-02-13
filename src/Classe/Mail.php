@@ -50,8 +50,8 @@ class Mail
             'Messages' => [
                 [
                     'From' => [
-                        'Email' => "cloud@ducompagnon.fr",
-                        'Name' => "Le Cloud du Compagnon"
+                        'Email' => "contact@delices-vaunage.fr",
+                        'Name' => "Contact du site"
                     ],
                     'To' => [
                         [
@@ -67,6 +67,7 @@ class Mail
                         // 'content' => $content,
                         'pseudo' => $vars['pseudo'] ?? 'pseudo indéfini',
                         'email' => $vars['email'] ?? 'emeil indéfini',
+                        'tel' => $vars['tel'] ?? 'tel indéfini',
                         'message' => $vars['message'] ?? 'message indéfini',
                         'link' => $vars['link'] ?? 'lien indéfini',
                         'tag' => $vars['tag'] ?? 'tag indéfini',

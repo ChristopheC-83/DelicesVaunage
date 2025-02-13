@@ -27,7 +27,8 @@ final class ContactController extends AbstractController
                 'message' => $formData['_message'],
             ];
 
-            $mail->send('cloud@ducompagnon.fr', 'Admin du Cloud', 'Contact du site', 6441169,  $vars);
+            $mail->send('contact@delices-vaunage.fr', 'Alicia & Kevin', 'Contact du site', 6723649,  $vars);
+
 
             $this->addFlash('success', 'Message envoyé !');
             return $this->redirectToRoute('app_home');
