@@ -21,7 +21,8 @@
 					{% if  item.isVisible %}
 						<li class="w-3/5">
 							<a href="{{ path('app_categorie',{'categorie':item.slug} )}}" class="relative block px-3 py-2 text-col-gold md:p-0 link-navbar" aria-current="page">
-								<p class="capitalize p">{{ item.name | split(' ')[1] }}</p>
+								{# <p class="capitalize p">{{ item.name | split(' ')[1] }}</p> #}
+								<p class="capitalize p">{{ item.name }}</p>
 							</a>
 						</li>
 					{% endif %}
