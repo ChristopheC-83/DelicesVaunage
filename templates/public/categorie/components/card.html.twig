@@ -1,4 +1,4 @@
-<article class="relative bg-white border rounded-lg w-[40vw] max-w-[250px]  border-col-gold h-[80vw] max-h-[550px] customShadow min-h-[350px] min-w-[140px] apparition-card"  style="animation-delay: {{ loop.index0 * 0.2 }}s">
+<article class="relative bg-white border rounded-lg w-[40vw] max-w-[250px]  border-col-gold h-[80vw] max-h-[550px] customShadow min-h-[350px] min-w-[140px] apparition-card" style="animation-delay: {{ loop.index0 * 0.2 }}s">
 	<img class="object-cover w-full rounded-t-lg aspect-square" src="{{ asset('images/products/' ~ product.image) }}" alt="{{product.name}}"/>
 
 	<div class="flex flex-col justify-between p-1 h-1/2 xs:p-3 sm:p-5">
@@ -7,5 +7,11 @@
 		<div class="mb-3 text-xs font-normal text-gray-700 xs:text-sm sm:text-base">{{product.description | raw}}</div>
 		<div class="h-1"></div>
 	</div>
-	<div class="absolute bottom-0 px-4 py-2 font-bold translate-y-[33%] border rounded-lg customShadow right-2 bg-col-gold h5">{{product.price|price }}</div>
+	{#  si prix différent de 0 #}
+	{% if product.price != 0 %}
+		<div class="absolute bottom-0 px-4 py-2 font-bold translate-y-[33%] border rounded-lg customShadow right-2 bg-col-gold h5">{{product.price|price }}</div>
+	{% else %}
+		<div class="absolute bottom-0 px-4 py-2 font-bold translate-y-[33%] border rounded-lg customShadow right-2 bg-col-gold h5">A définir</div>
+
+	{% endif %}
 </article>
