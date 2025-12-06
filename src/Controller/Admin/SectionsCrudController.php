@@ -45,13 +45,13 @@ class SectionsCrudController extends AbstractCrudController
             BooleanField::new('isVisible')->setLabel('visible')->setHelp('produit visible sur le site'),
             NumberField::new('position')->setLabel('position')->setHelp('position dans l\'ordre d\'apparition sur la page d\'accueil'),
             TextEditorField::new('description')->setLabel('Description')->setHelp('Description de la catégorie'),
-            ImageField::new('banniere')
-                ->setLabel('banniere')
-                ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
-                ->setUploadDir('/public/images/categories')
-                ->setBasePath('images/categories')
-                ->setRequired(false)
-                ->setHelp('Banniere sur la page dédiée'),
+            // ImageField::new('banniere')
+            //     ->setLabel('banniere')
+            //     ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
+            //     ->setUploadDir('/public/images/categories')
+            //     ->setBasePath('images/categories')
+            //     ->setRequired(false)
+            //     ->setHelp('Banniere sur la page dédiée'),
             ImageField::new('image_1')
                 ->setLabel('image 1')
                 ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
@@ -64,14 +64,14 @@ class SectionsCrudController extends AbstractCrudController
                 ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
                 ->setUploadDir('/public/images/categories')
                 ->setBasePath('images/categories')
-                ->setRequired(false)
+                ->setRequired($required)
                 ->setHelp('image2 de la catégorie'),
             ImageField::new('image_3')
                 ->setLabel('image 3')
                 ->setUploadedFileNamePattern('[year]-[month]-[day]-[contenthash].[extension]')
                 ->setUploadDir('/public/images/categories')
                 ->setBasePath('images/categories')
-                ->setRequired(false)
+                ->setRequired($required)
                 ->setHelp('image3 de la catégorie'),
         ];
     }
